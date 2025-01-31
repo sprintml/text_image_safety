@@ -90,38 +90,6 @@ def main():
     pipe.model_with_hooks.register_hooks()
 
 
-    # peft_config = LoraConfig(
-    #     r=16,  # or whatever you used in training
-    #     lora_alpha=1,
-    #     target_modules=["k_proj", "v_proj", "out_proj", "fc1", "fc2", "patch_embedding"],
-    #     lora_dropout=0.1,
-    #     bias="none",
-    # )
-
-
-    # # Load fine-tuned checkpoint
-    # clipL_checkpoint_path = "/home/aditya/safe-clip/checkpoints_lambdas_2/job_187049_task_None_proc_0_pid_5878_time_1735956682/checkpoint_best_recall.pth"
-    # clipG_checkpoint_path = "/home/aditya/safe-clip/checkpoints_lambdas_2/job_187048_task_None_proc_0_pid_882652_time_1735956692/checkpoint_best_recall.pth"
-
-    # checkpoint_clipL= torch.load(clipL_checkpoint_path, map_location="cpu")
-    # checkpoint_clipG = torch.load(clipG_checkpoint_path, map_location="cpu")
-
-    # # Load pre-trained CLIP models
-    # text_encoder = CLIPTextModelWithProjection.from_pretrained("openai/clip-vit-large-patch14")
-    # text_encoder_2 = CLIPTextModelWithProjection.from_pretrained("laion/CLIP-ViT-bigG-14-laion2B-39B-b160k")
-
-    # text_encoder_ft = get_peft_model(text_encoder, peft_config)
-    # text_encoder_2_ft = get_peft_model(text_encoder_2, peft_config)
-    # # Load fine-tuned weights into the models
-    # text_encoder_ft.load_state_dict(checkpoint_clipL["text_encoder_ft"], strict=False)
-    # text_encoder_2_ft.load_state_dict(checkpoint_clipG["text_encoder_ft"], strict=False)
-
-    # text_encoder_ft.to("cuda", dtype=torch.float16)
-    # text_encoder_2_ft.to("cuda", dtype=torch.float16)
-    # pipe.text_encoder = text_encoder_ft
-    # pipe.text_encoder_2 = text_encoder_2_ft
-    # pipe.text_encoder_3 = None
-
     # Load toxic and non-toxic prompts
     toxic_prompts = load_prompts(args.toxic_file)
     non_toxic_prompts = load_prompts(args.non_toxic_file)
