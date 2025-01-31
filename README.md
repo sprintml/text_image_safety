@@ -4,7 +4,7 @@ This repository contains scripts for different parts of the project:
 
 ## 📂 Project Structure
 - **`ft_clip/`** – Implementation of **NSFW-Intervention** and **Safe-CLIP**.
-- **`safety_DM/`** – Custom implementation of **AURA** in the diffusion backbone models of studied text-to-image models.
+- **`intervention/`** – Custom implementation of **AURA** in the diffusion backbone models of studied text-to-image models.
 
 ## 🛠 Dependencies & Implementations
 - **Safe-CLIP** is implemented based on: [Safe-CLIP Repository](https://github.com/aimagelab/safe-clip)
