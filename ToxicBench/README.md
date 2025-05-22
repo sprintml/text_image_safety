@@ -1,7 +1,5 @@
 # ToxicBench
 
-![ToxicBench Evaluation Pipeline](ToxicBench.png)
-
 ## Installation Guide
 
 Clone the repo and install the required libraries for this repo :
