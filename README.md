@@ -5,7 +5,8 @@ This repository contains scripts for different parts of the project:
 ## 📂 Project Structure
 - **`NSFW_intervention/`** – Implementation of **NSFW-Intervention**.
 - **`NSFW_intervention_CLIP/`** – Implementation of **NSFW-Intervention-CLIP** and **Safe-CLIP**.
-- **`intervention/`** – Custom implementation of **AURA** in the diffusion backbone models of studied text-to-image models.
+- **`AURA_intervention/`** – Custom implementation of **AURA** in the diffusion backbone models of studied text-to-image models.
+- **`ToxicBench/`** - Our new dataset and evaluation pipeline.
 
 ## 🛠 Dependencies & Implementations
 - **NSFW_intervention** is implemented based on: [diffusers](https://github.com/huggingface/diffusers)
