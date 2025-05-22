@@ -1,6 +1,6 @@
 # NSFW-Intervention
 
-**NSFW-Intervention** is a fine-tuning pipeline designed to reduce toxic content generation in diffusion-based models. It supports fine-tuning of **Stable Diffusion v3**, **DeepFloyd IF**, and **SDXL** using DreamBooth-based LoRA methods.
+**NSFW-Intervention** is a fine-tuning pipeline designed to reduce toxic content generation in diffusion-based models. It supports fine-tuning of **Stable Diffusion v3**, and **SDXL** using DreamBooth-based LoRA methods.
 
 ---
 
@@ -37,7 +37,6 @@ Make sure both datasets follow the `image_folder` structure with appropriate met
 The main training scripts available are:
 
 - `sd3.py` for **Stable Diffusion v3**
-- `deepfloyd.py` for **DeepFloyd IF**
 - `sdxl.py` for **Stable Diffusion XL**
 
 Each script shares a similar CLI pattern and requires minimal modifications.
@@ -54,7 +53,7 @@ Each script shares a similar CLI pattern and requires minimal modifications.
 python sd3.py  --pretrained_model_name_or_path=$MODEL_NAME   --toxic_dataset=/path/to/toxic_dataset   --target_dataset=/path/to/target_dataset   --enable_xformers_memory_efficient_attention   --resolution=512   --train_batch_size=$BATCH_SIZE   --val_batch_size=2   --gradient_accumulation_steps=1   --gradient_checkpointing   --num_train_epochs=100   --learning_rate=$LR   --lr_scheduler="constant"   --lr_warmup_steps=0   --mixed_precision="fp16"   --report_to="wandb"   --checkpointing_steps=500   --output_dir=/path/to/output_model   --seed=42   --target_layer=10   --validation_epochs=10   --center_crop  
 ```
 
-Make sure to adapt this command for `deepfloyd.py` and `sdxl.py` accordingly.
+Make sure to adapt this command for `sdxl.py` accordingly.
 
 ---
 
